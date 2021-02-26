@@ -29,6 +29,13 @@ export default {
     },
 
     actions: {
+        async signUp({dispatch}, formData) {
+            await axios.get('/sanctum/csrf-cookie')
+            await axios.post('/register', formData)
+
+            return dispatch('me')
+        },
+
         async signIn({ dispatch }, credentials) {
             await axios.get('/sanctum/csrf-cookie')
             await axios.post('/login', credentials)

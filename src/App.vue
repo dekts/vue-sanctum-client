@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <template v-if="!authenticated">
-        <router-link to="/signin">Sign in</router-link>
+        <router-link to="/signin">Sign in</router-link> |
+        <router-link to="/signup">Sign up</router-link>
       </template>
       <template v-else>
         <router-link to="/account">{{ user.name }}</router-link> |
