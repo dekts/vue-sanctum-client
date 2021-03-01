@@ -1,4 +1,4 @@
-# testingsanctumclient
+# vue-sanctum-client
 
 ## Project setup
 ```
