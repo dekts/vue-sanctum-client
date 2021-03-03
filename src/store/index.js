@@ -13,7 +13,9 @@ export default new Vuex.Store({
     },
     getters: {
         getLoadingState: state => state.isLoading,
-        getToken: _ => localStorage.getItem("IE-token")
+        getToken() {
+            return localStorage.getItem("IE-token") != null;
+        }
     },
     mutations: {
         initialiseUser: (state, payload) => {

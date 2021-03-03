@@ -1,5 +1,4 @@
 <template>
-  <base-auth-layout>
     <div class="card-body d-flex flex-column">
       <div class="logo mb-5">
         <router-link :to="{ name: 'Home' }">
@@ -50,7 +49,6 @@
         <router-link tag="a" :to="{ name: 'SignIn' }">Already have an account?</router-link>
       </div>
     </div>
-  </base-auth-layout>
 </template>
 
 <script>
@@ -110,14 +108,11 @@ export default {
       const signData = {
         email: this.signUpData.email,
         password: this.signUpData.password,
-        phone_code: this.signUpData.dialCode,
-        mobile: this.signUpData.mobile,
-        terms: this.signUpData.terms
       };
       const url = "sign-up";
       authHTTP
         .post(url, signData)
-        .then(result => {
+        .then(() => {
           this.setLoadingState(false);
           this.$router.push({
             name: "Home",

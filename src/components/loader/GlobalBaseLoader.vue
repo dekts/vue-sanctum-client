@@ -12,7 +12,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-    name: 'BaseLoader',
+    name: 'GlobalBaseLoader',
     props: {
         isLoading: Boolean
     },

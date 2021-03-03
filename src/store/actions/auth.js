@@ -21,9 +21,9 @@ export const login = async ({ commit }, credentials) => {
 export const logout = async ({ commit }) => {
     commit("SET_LOADING_STATE", true);
     let response;
+    var rememberMe = localStorage.getItem("rememberMe");
     try {
         response = await API.Authentication().services.logout();
-        var rememberMe = localStorage.getItem("rememberMe");
         localStorage.clear();
         localStorage.setItem("rememberMe", rememberMe);
         vm.$toast.success(response.data.message);
@@ -31,7 +31,6 @@ export const logout = async ({ commit }) => {
         commit("SET_LOADING_STATE", false);
     } catch (error) {
         if (error.response.status === 401) {
-            var rememberMe = localStorage.getItem("rememberMe");
             localStorage.clear();
             localStorage.setItem("rememberMe", rememberMe);
             vm.$router.push({ name: "SignIn" });

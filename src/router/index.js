@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: 'Home',
     component: MainLayout,
     meta: {
         isAuthRequired: true

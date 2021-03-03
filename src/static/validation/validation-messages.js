@@ -1,5 +1,3 @@
-import { some } from "lodash";
-
 const somethingWentWrong = "OOPS ! Something Went Wrong.";
 export default {
     email: "Please enter a valid email address.",
